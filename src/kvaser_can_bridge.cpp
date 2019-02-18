@@ -141,7 +141,7 @@ int main(int argc, char** argv)
   {
     ROS_INFO("Kvaser CAN Interface - Got hardware_id: %d", hardware_id);
 
-    if (hardware_id <= 0)
+    if (hardware_id < 0)
     {
       ROS_ERROR("Kvaser CAN Interface - CAN hardware ID is invalid.");
       exit = true;

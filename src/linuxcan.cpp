@@ -42,7 +42,7 @@ ReturnStatuses KvaserCan::open(const int32_t& hardware_id,
     {
       if (canGetChannelData(idx, canCHANNELDATA_CARD_SERIAL_NO, &serial, sizeof(serial)) == canOK)
       {
-        if (serial[0] == (uint32_t) hardware_id)
+        if (serial[0] == (uint32_t) hardware_id || hardware_id == 0)
         {
           if (canGetChannelData(idx, canCHANNELDATA_CHAN_NO_ON_CARD, &channel_number, sizeof(channel_number)) == canOK)
           {
